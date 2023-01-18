@@ -1,4 +1,4 @@
-package com.example.schedulerTimeService.config;
+package com.example.scheduler;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

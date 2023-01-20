@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class TaskReader {
 
@@ -12,14 +13,10 @@ public class TaskReader {
     private String readTime;
     private String readDays;
     private String convertedDays;
-
     private final String symbol = ";";
     private final String fileName = "src/main/resources/config/task.csv";
-
     private List<TaskRecords> recordList = new ArrayList<>();
-
-    public TaskReader() {
-    }
+    private static Logger LOGGER = Logger.getLogger("InfoLogging");
 
     public List<TaskRecords> readFile() {
         recordList.clear();
@@ -34,7 +31,7 @@ public class TaskReader {
                 recordList.add(new TaskRecords(readTime, convertedDays));
             }
         } catch (FileNotFoundException e) {
-            System.out.println("File not found");
+            LOGGER.info("File not found");
             return null;
         }
         return recordList;

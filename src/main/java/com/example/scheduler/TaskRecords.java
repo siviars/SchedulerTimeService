@@ -2,8 +2,8 @@ package com.example.scheduler;
 
 public class TaskRecords {
 
-    String time;
-    String bitmask;
+    private String time;
+    private String bitmask;
 
     public TaskRecords(String time, String bitmask) {
         this.time = time;
@@ -14,15 +14,8 @@ public class TaskRecords {
         return time;
     }
 
-    public void setTime(String time) {
-        this.time = time;
-    }
-
     public String getBitmask() {
         return bitmask;
     }
 
-    public void setBitmask(String bitmask) {
-        this.bitmask = bitmask;
-    }
 }
